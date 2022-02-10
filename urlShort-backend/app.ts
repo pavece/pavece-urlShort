@@ -4,6 +4,8 @@ import redirectUrlRouter from "./controllers/redirectUrl";
 import mongoose from "mongoose";
 import "dotenv/config";
 
+import * as scrapper from "./services/scrapper";
+
 const app = express();
 
 app.use(express.json());
@@ -18,6 +20,8 @@ mongoose.connect(
 
 app.use("/api", shortUrlRouter);
 app.use("/url", redirectUrlRouter);
+
+scrapper.start(); 
 
 app.listen(process.env.PORT, () => {
 	console.log(`listening in ${process.env.PORT}`);
