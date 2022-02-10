@@ -6,6 +6,7 @@ const urlSchema = new mongoose.Schema({
 	originalUrl: { type: String, trim: true, required: true },
 	shortUrl: { type: String, trim: true, required: true },
 	identifyer: { type: String, trim: true, required: true },
+	siteData: Object
 });
 
 const urlModel = mongoose.model("urls", urlSchema);
