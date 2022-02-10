@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/pavece/pavece-urlShort#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "mongoose": "^6.2.1",
+    "nanoid": "^3.2.0",
     "ts-node": "^10.5.0",
     "uuid": "^8.3.2"
   },

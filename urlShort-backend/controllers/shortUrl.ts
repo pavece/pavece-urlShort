@@ -1,11 +1,26 @@
 import express from "express";
 import { Request, Response } from "express";
-import { v4 as uuidv4 } from 'uuid';
+import { nanoid } from "nanoid";
+
+import urlModel from "../models/urlModel";
 
 const shortUrlRouter = express.Router();
 
 shortUrlRouter.post("/shorten", (req: Request, res: Response) => {
-	res.json({ message: req.body.url + uuidv4() });
+	const id = nanoid();
+	const newUrl = new urlModel({
+		title: req.body.title,
+		desription: req.body.description,
+		originalUrl: req.body.original,
+		shortUrl: `http://localhost:5000/url/${id}}`,
+		identifyer: id,
+	});
+	newUrl
+		.save((err: String) => {
+			err ? res.sendStatus(500)
+			: res.json({statusMessage: "Url saved in database"})
+		})
+		
 });
 
 export default shortUrlRouter;
