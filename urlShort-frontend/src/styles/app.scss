@@ -1,5 +1,95 @@
+$gray-font-color: #6a7279;
+$accent-blue: #0066ff;
+$background-accent: #f7f7f8;
+
 body {
 	margin: 0;
 	padding: 0;
-	font-size: "sans-serif";
+	font-family: "Quicksand", sans-serif;
+
+	scroll-behavior: smooth;
+}
+nav {
+	padding: 3vh 3vw;
+	margin-bottom: 10vh;
+}
+.nav-logo {
+	width: 10vw;
+}
+
+.hero-section {
+	display: grid;
+	grid-template-columns: 0.8fr 1fr;
+	gap: 10vw;
+	margin-top: 10vh;
+
+	.hero-text {
+		text-align: center;
+
+		h1 {
+			font-family: "Archivo Black", sans-serif;
+			font-size: calc(1.2rem + 2vw);
+		}
+		p {
+			color: $gray-font-color;
+			font-size: calc(0.8rem + 0.4vw);
+		}
+	}
+	.hero-info {
+		text-align: center;
+		button {
+			margin-top: 5vh;
+			width: 50%;
+			background-color: $accent-blue;
+			color: #ffff;
+			border: none;
+			font-size: calc(0.5rem + 0.5vw);
+			border-radius: 10px;
+			padding: 2vh 0;
+		}
+	}
+	.hero-ilu-container {
+		img {
+			width: 40vw;
+		}
+	}
+	margin-bottom: 15vh;
+}
+
+.features-container {
+	margin: 0 10vw;
+	gap: 10vw;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(300px, 1fr));
+	margin-bottom: 15vh;
+}
+
+.feature {
+	text-align: center;
+	background-color: $background-accent;
+	font-size: calc(1rem + 0.4vw);
+	padding: 2vh 2vw;
+	border-radius: 10px;
+	color: $gray-font-color;
+
+	.feature-icon {
+		color: black;
+		font-size: calc(2rem + 1vw);
+	}
+}
+
+.landing-footer {
+	background-color: $background-accent;
+	padding: 3vh 3vw 1vh 3vw;
+	img{
+		width: 10vw;
+	}
+	p {
+		font-size: calc(0.6rem + 0.4vw);
+	}
+	.footer-initial-container{
+		display: flex;
+		align-items: center;
+		margin-bottom: 5vh;
+	}
 }
