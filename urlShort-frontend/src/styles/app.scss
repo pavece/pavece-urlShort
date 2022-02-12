@@ -46,6 +46,13 @@ nav {
 			font-size: calc(0.5rem + 0.5vw);
 			border-radius: 10px;
 			padding: 2vh 0;
+			cursor: pointer;
+			transition: all 0.5s;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+		}
+		button:hover {
+			transition: all 0.5s;
+			background-color: #0066ffcc;
 		}
 	}
 	.hero-ilu-container {
@@ -81,13 +88,13 @@ nav {
 .landing-footer {
 	background-color: $background-accent;
 	padding: 3vh 3vw 1vh 3vw;
-	img{
+	img {
 		width: 10vw;
 	}
 	p {
 		font-size: calc(0.6rem + 0.4vw);
 	}
-	.footer-initial-container{
+	.footer-initial-container {
 		display: flex;
 		align-items: center;
 		margin-bottom: 5vh;
