@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LandingHeroSection = () => {
 	return (
@@ -9,7 +10,9 @@ const LandingHeroSection = () => {
 					<p>Shorten your links fast without any account neded</p>
 				</div>
 				<div className="hero-btn">
-					<button>Go to your links</button>
+					<Link to="/app">
+						<button>Go to your links</button>
+					</Link>
 				</div>
 			</div>
 			<div className="hero-ilu-container">
