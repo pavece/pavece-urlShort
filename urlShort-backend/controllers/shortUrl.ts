@@ -12,19 +12,17 @@ shortUrlRouter.post("/shorten", async (req: Request, res: Response) => {
 	const siteData = await scrapper.getData(req.body.original);
 
 	const newUrl = new urlModel({
-		title: req.body.title,
-		desription: req.body.description,
+		title: siteData.title,
+		desription: siteData.desription,
 		originalUrl: req.body.original,
 		shortUrl: `http://localhost:5000/url/${id}}`,
 		identifyer: id,
-		siteData,
 	});
 	newUrl.save((err: String) => {
 		err
 			? res.sendStatus(500)
 			: res.json({
-					url: `http://localhost:5000/url/${id}}`,
-					description: req.body.description,
+					url: `http://localhost:5000/url/${id}`,
 					originalUrl: req.body.original,
 					siteData,
 			  });
