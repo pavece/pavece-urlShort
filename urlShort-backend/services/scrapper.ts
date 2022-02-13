@@ -12,12 +12,21 @@ const start = async () => {
 const getData = async (url: String) => {
 	await page.goto(url);
 	await page.evaluate(() => {});
-	let data = {
-		title: await page.title(),
-		desription: await page.$eval(
+
+	let description;
+
+	try {
+		description = await page.$eval(
 			"head > meta[name='description']",
 			(element: any) => element.content
-		),
+		);
+	} catch (error) {
+		description = "no description";
+	}
+	
+	let data = {
+		title: await page.title(),
+		desription: description,
 	};
 	return data;
 };
