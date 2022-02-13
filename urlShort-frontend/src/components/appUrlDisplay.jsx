@@ -20,6 +20,10 @@ function AppUrlDisplay(props) {
 		console.log(urls);
 	}, [props.update]);
 
+	const reload = () => {
+		setUrls(localRead);
+	};
+
 	return (
 		<div className="app-url-display-container">
 			{urls.map(el => (
@@ -27,6 +31,9 @@ function AppUrlDisplay(props) {
 					title={el.siteData.title}
 					url={el.originalUrl}
 					description={el.siteData.desription}
+					id={el.id}
+					updateElement={reload}
+					systemUrl={el.url}
 				/>
 			))}
 		</div>

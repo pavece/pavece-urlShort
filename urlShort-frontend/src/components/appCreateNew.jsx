@@ -3,6 +3,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { localAdd } from "../utils/handleLocalStorage";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function AppCreateNew(props) {
 	const [data, setData] = useState(null);
 	const [loading, setLoading] = useState(false);
@@ -12,14 +15,22 @@ function AppCreateNew(props) {
 		try {
 			console.log(userData);
 			setLoading(true);
-			const axiosData = await axios.post("http://localhost:5000/api/shorten", {
-				original: userData,
-			});
-			setData(axiosData.data);
-			localAdd(axiosData.data);
-			setLoading(false);
-			props.onUrlAdd(axiosData.data)
-
+			if (userData.startsWith("http")) {
+				const axiosData = await axios.post(
+					"http://localhost:5000/api/shorten",
+					{
+						original: userData,
+					}
+				);
+				setData(axiosData.data);
+				localAdd(axiosData.data);
+				setLoading(false);
+				props.onUrlAdd(axiosData.data);
+			} else {
+				console.log("err")
+				setLoading(false);
+				toast.warning("Error")
+			}
 		} catch (error) {
 			setLoading(false);
 			console.log(error);
@@ -41,7 +52,18 @@ function AppCreateNew(props) {
 					}}
 				/>
 			</form>
-			<button onClick={fetchData}>Create</button>
+			{loading ? <p>Loading</p> : <button onClick={fetchData}>Create</button>}
+			<ToastContainer
+				position="top-center"
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+			/>
 		</div>
 	);
 }

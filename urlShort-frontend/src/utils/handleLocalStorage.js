@@ -3,21 +3,7 @@ const localRead = () => {
 };
 
 const localCreate = () => {
-	localRead()
-		? null
-		: localStorage.setItem(
-				"urls",
-				JSON.stringify([
-					{
-						url: "http://localhost:5000/url/TOKpgIKCk03URB1kX5c2J",
-						originalUrl: "http://pavece.com",
-						siteData: {
-							desription: "Pavece developer, personal page and portfolio",
-							title: "Pavece developer",
-						},
-					},
-				])
-		  );
+	localRead() ? null : localStorage.setItem("urls", JSON.stringify([]));
 };
 
 const localAdd = element => {
@@ -28,10 +14,9 @@ const localAdd = element => {
 
 const localDeleteById = id => {
 	const elements = localRead();
-	let newElements = elements;
 
-	if (elements.find(e => e.name === id)) {
-		elements.splice(elements.findIndex(e => e.name === id));
+	if (elements.find(e => e.id === id)) {
+		elements.splice(elements.findIndex(e => e.id === id), 1);
 	} else {
 		return;
 	}

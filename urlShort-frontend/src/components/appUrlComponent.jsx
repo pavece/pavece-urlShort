@@ -1,6 +1,24 @@
 import React from "react";
+import axios from "axios";
+import { localDeleteById } from "../utils/handleLocalStorage";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function AppUrlComponent(props) {
+	const deleteElement = () => {
+		localDeleteById(props.id);
+		try {
+			axios.delete(`http://localhost:5000/api/${props.id}`);
+		} catch (error) {
+			console.log(error);
+		}
+		props.updateElement();
+	};
+
+	const copyUrl = () => {
+		navigator.clipboard.writeText(props.systemUrl);
+		toast.success("Link copied to clipboard");
+	};
 	return (
 		<div className="url-component-container">
 			<div className="url-component-info">
@@ -10,8 +28,12 @@ function AppUrlComponent(props) {
 				<p className="url-component-description">{props.description}</p>
 			</div>
 			<div className="url-component-buttons">
-				<button className="copy-button">Copy link</button>
-				<button className="delete-button">Delete</button>
+				<button className="copy-button" onClick={copyUrl}>
+					Copy link
+				</button>
+				<button className="delete-button" onClick={deleteElement}>
+					Delete
+				</button>
 			</div>
 		</div>
 	);
