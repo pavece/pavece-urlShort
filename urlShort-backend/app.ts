@@ -1,6 +1,7 @@
 import express from "express";
 import shortUrlRouter from "./controllers/shortUrl";
 import redirectUrlRouter from "./controllers/redirectUrl";
+import deleteRouter from "./controllers/deleteUrl";
 import mongoose from "mongoose";
 import "dotenv/config";
 import cors from "cors";
@@ -28,7 +29,7 @@ mongoose.connect(
 	}
 );
 
-app.use("/api", shortUrlRouter);
+app.use("/api", shortUrlRouter, deleteRouter);
 app.use("/url", redirectUrlRouter);
 
 scrapper.start();
