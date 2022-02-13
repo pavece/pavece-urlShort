@@ -9,9 +9,8 @@ const start = async () => {
 	console.log("Scrapper instance created");
 };
 
-const getData = async (url: String) => {
-	await page.goto(url);
-	await page.evaluate(() => {});
+const getData = async (url: string) => {
+	await page.goto(url); 
 
 	let description;
 
@@ -23,11 +22,12 @@ const getData = async (url: String) => {
 	} catch (error) {
 		description = "no description";
 	}
-	
+
 	let data = {
 		title: await page.title(),
 		desription: description,
 	};
+
 	return data;
 };
 

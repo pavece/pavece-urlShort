@@ -20,7 +20,7 @@ shortUrlRouter.post("/shorten", async (req: Request, res: Response) => {
 		title: siteData.title,
 		desription: siteData.desription,
 		originalUrl: req.body.original,
-		shortUrl: `http://localhost:5000/url/${id}}`,
+		shortUrl: `http://localhost:5000/url/${id}`,
 		identifyer: databaseId,
 	});
 	newUrl.save((err: String) => {
