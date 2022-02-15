@@ -14,10 +14,11 @@ shortUrlRouter.post("/shorten", async (req: Request, res: Response) => {
 	//generating database id so i don't need to retrive the data after uploading to get mongo ID and i can use it in order to delete elements
 	const databaseId = uuidv4();
 
-	if (req.body.original.substr(req.body.original.length - 1) === "4" || "3") {
-		res.sendStatus(501);
+	const siteData = await scrapper.getData(req.body.original);
+
+	if (siteData.error) {
+		res.sendStatus(404);
 	} else {
-		const siteData = await scrapper.getData(req.body.original);
 		const newUrl = new urlModel({
 			title: siteData.title,
 			desription: siteData.desription,

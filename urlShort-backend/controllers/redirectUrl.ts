@@ -5,9 +5,12 @@ import urlModel from "../models/urlModel";
 
 redirectUrlRouter.get("/:id", (req: Request, res: Response) => {
 	const id: String = req.params.id;
-	urlModel.find({ url: `http://localhost:5000/url/${id}` }, (err: String, result: any) => {
-		err ? res.sendStatus(404) : res.redirect(result[0].originalUrl);
-	});
+	urlModel.find(
+		{ shortUrl: `http://localhost:5000/url/${id}` },
+		(err: String, result: any) => {
+			err ? res.sendStatus(404) : res.redirect(result[0].originalUrl);
+		}
+	);
 });
 
 export default redirectUrlRouter;

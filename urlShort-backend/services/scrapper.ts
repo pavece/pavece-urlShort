@@ -10,9 +10,17 @@ const start = async () => {
 };
 
 const getData = async (url: string) => {
-	await page.goto(url); 
+	let scrapperError = null;
+
+	try {
+		await page.goto(url);
+	} catch (err) {
+		console.log(`Couldn't resolve ${url}`);
+		scrapperError = "`Couldn't resolve ${url}`";
+	}
 
 	let description;
+	let title = await page.title();
 
 	try {
 		description = await page.$eval(
@@ -24,8 +32,9 @@ const getData = async (url: string) => {
 	}
 
 	let data = {
-		title: await page.title(),
+		title: title ? title : "Untitled",
 		desription: description,
+		error: scrapperError,
 	};
 
 	return data;
