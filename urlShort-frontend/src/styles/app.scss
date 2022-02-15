@@ -1,4 +1,4 @@
-$gray-font-color: #6a7279;
+$gray-font-color: #878c91;
 $accent-blue: #0066ff;
 $background-accent: #f7f7f8;
 
@@ -6,8 +6,10 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: "Quicksand", sans-serif;
-
 	scroll-behavior: smooth;
+	h1 {
+		font-size: calc(0.8rem + 0.5vw);
+	}
 }
 nav {
 	padding: 3vh 3vw;
@@ -19,13 +21,19 @@ button {
 	background-color: $accent-blue;
 	color: #ffff;
 	border: none;
-	font-size: calc(0.5rem + 0.5vw);
-	border-radius: 10px;
+	font-size: calc(0.3rem + 0.5vw);
+	border-radius: 5px;
 	padding: 2vh 0;
 	cursor: pointer;
 	transition: all 0.5s;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
+
+button:hover {
+	transition: all 0.5s;
+	background-color: #0066ffcc;
+}
+
 .nav-logo {
 	width: 10vw;
 }
@@ -41,7 +49,7 @@ button {
 
 		h1 {
 			font-family: "Archivo Black", sans-serif;
-			font-size: calc(1.2rem + 2vw);
+			font-size: calc(1rem + 2vw);
 		}
 		p {
 			color: $gray-font-color;
@@ -50,11 +58,6 @@ button {
 	}
 	.hero-info {
 		text-align: center;
-
-		button:hover {
-			transition: all 0.5s;
-			background-color: #0066ffcc;
-		}
 	}
 	.hero-ilu-container {
 		img {
@@ -103,7 +106,7 @@ button {
 }
 
 .app-page-container {
-	padding: 1vh 1vw;
+	padding: 1vh 3vw;
 	display: grid;
 	grid-template-columns: 1fr 4fr;
 	gap: 3vw;
@@ -130,14 +133,14 @@ button {
 	button {
 		width: 40%;
 		margin: 0 3%;
-		padding: 4% 1vw;
+		padding: 3% 1vw;
 	}
 	.delete-button {
 		background-color: #ff3714;
 	}
 }
 
-.url-component-buttons{
+.url-component-buttons {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -146,4 +149,36 @@ button {
 .app-url-display-container {
 	overflow-y: scroll;
 	height: 85vh;
+}
+
+//scrolbar
+
+/* width */
+::-webkit-scrollbar {
+	width: 0px;
+}
+
+.url-input {
+	padding: 5% 5%;
+	border: none;
+	border-radius: 5px;
+	width: 13vw;
+	margin-top: 10%;
+}
+
+.url-input:focus {
+	border: none;
+}
+
+.no-elements-container {
+	text-align: center;
+	.no-elements-ilu {
+		margin-bottom: 10vh;
+		width: 20vw;
+	}
+}
+
+.loading-btn {
+	background-color: #2e78e7;
+	
 }

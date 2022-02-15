@@ -5,6 +5,10 @@ body {
   scroll-behavior: smooth;
 }
 
+body h1 {
+  font-size: calc(0.8rem + 0.5vw);
+}
+
 nav {
   padding: 3vh 3vw;
 }
@@ -15,14 +19,20 @@ button {
   background-color: #0066ff;
   color: #ffff;
   border: none;
-  font-size: calc(0.5rem + 0.5vw);
-  border-radius: 10px;
+  font-size: calc(0.3rem + 0.5vw);
+  border-radius: 5px;
   padding: 2vh 0;
   cursor: pointer;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: #0066ffcc;
 }
 
 .nav-logo {
@@ -45,22 +55,16 @@ button {
 
 .hero-section .hero-text h1 {
   font-family: "Archivo Black", sans-serif;
-  font-size: calc(1.2rem + 2vw);
+  font-size: calc(1rem + 2vw);
 }
 
 .hero-section .hero-text p {
-  color: #6a7279;
+  color: #878c91;
   font-size: calc(0.8rem + 0.4vw);
 }
 
 .hero-section .hero-info {
   text-align: center;
-}
-
-.hero-section .hero-info button:hover {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  background-color: #0066ffcc;
 }
 
 .hero-section .hero-ilu-container img {
@@ -83,7 +87,7 @@ button {
   font-size: calc(1rem + 0.4vw);
   padding: 2vh 2vw;
   border-radius: 10px;
-  color: #6a7279;
+  color: #878c91;
 }
 
 .feature .feature-icon {
@@ -115,7 +119,7 @@ button {
 }
 
 .app-page-container {
-  padding: 1vh 1vw;
+  padding: 1vh 3vw;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 4fr;
@@ -150,7 +154,7 @@ button {
 .url-component-container button {
   width: 40%;
   margin: 0 3%;
-  padding: 4% 1vw;
+  padding: 3% 1vw;
 }
 
 .url-component-container .delete-button {
@@ -172,5 +176,35 @@ button {
 .app-url-display-container {
   overflow-y: scroll;
   height: 85vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.url-input {
+  padding: 5% 5%;
+  border: none;
+  border-radius: 5px;
+  width: 13vw;
+  margin-top: 10%;
+}
+
+.url-input:focus {
+  border: none;
+}
+
+.no-elements-container {
+  text-align: center;
+}
+
+.no-elements-container .no-elements-ilu {
+  margin-bottom: 10vh;
+  width: 20vw;
+}
+
+.loading-btn {
+  background-color: #2e78e7;
 }
 /*# sourceMappingURL=app.css.map */
