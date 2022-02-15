@@ -8,7 +8,7 @@ function AppUrlComponent(props) {
 	const deleteElement = () => {
 		localDeleteById(props.id);
 		try {
-			axios.delete(`http://localhost:5000/api/${props.id}`);
+			axios.delete(`http://localhost:5000/api/delete/${props.id}`);
 		} catch (error) {
 			console.log(error);
 		}

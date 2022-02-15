@@ -6,7 +6,7 @@ import {
 	localRead,
 	localDeleteById,
 } from "../utils/handleLocalStorage";
-
+import NoElements from "./noElements";
 function AppUrlDisplay(props) {
 	const [urls, setUrls] = useState([]);
 
@@ -26,16 +26,20 @@ function AppUrlDisplay(props) {
 
 	return (
 		<div className="app-url-display-container">
-			{urls.map(el => (
-				<AppUrlComponent
-					title={el.siteData.title}
-					url={el.originalUrl}
-					description={el.siteData.desription}
-					id={el.id}
-					updateElement={reload}
-					systemUrl={el.url}
-				/>
-			))}
+			{urls[0] ? (
+				urls.map(el => (
+					<AppUrlComponent
+						title={el.siteData.title}
+						url={el.originalUrl}
+						description={el.siteData.desription}
+						id={el.id}
+						updateElement={reload}
+						systemUrl={el.url}
+					/>
+				))
+			) : (
+				<NoElements />
+			)}
 		</div>
 	);
 }

@@ -7,11 +7,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function AppCreateNew(props) {
-	const [data, setData] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [userData, setUserData] = useState(null);
 
-	const fetchData = async () => {
+	const fetchData = async e => {
+		e.preventDefault();
 		try {
 			console.log(userData);
 			setLoading(true);
@@ -22,17 +22,18 @@ function AppCreateNew(props) {
 						original: userData,
 					}
 				);
-				setData(axiosData.data);
+
 				localAdd(axiosData.data);
 				setLoading(false);
 				props.onUrlAdd(axiosData.data);
 			} else {
-				console.log("err")
+				console.log("err");
 				setLoading(false);
-				toast.warning("Error")
+				toast.warning("Error");
 			}
 		} catch (error) {
 			setLoading(false);
+			toast.error("Something went wrong");
 			console.log(error);
 		}
 	};
@@ -41,7 +42,7 @@ function AppCreateNew(props) {
 		<div className="create-new-conteiner">
 			<h1>New URL</h1>
 			<p>Create a new element and share it with anyone</p>
-			<form action="">
+			<form onSubmit={e => fetchData(e)}>
 				<input
 					type="text"
 					name=""
@@ -50,11 +51,17 @@ function AppCreateNew(props) {
 					onChange={e => {
 						setUserData(e.target.value);
 					}}
+					className="url-input"
 				/>
+				{loading ? (
+					<button className="loading-btn">Create</button>
+				) : (
+					<button type="submit">Create</button>
+				)}
 			</form>
-			{loading ? <p>Loading</p> : <button onClick={fetchData}>Create</button>}
+
 			<ToastContainer
-				position="top-center"
+				position="top-right"
 				autoClose={5000}
 				hideProgressBar={false}
 				newestOnTop={false}
