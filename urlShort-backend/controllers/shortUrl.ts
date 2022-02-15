@@ -13,26 +13,29 @@ shortUrlRouter.post("/shorten", async (req: Request, res: Response) => {
 
 	//generating database id so i don't need to retrive the data after uploading to get mongo ID and i can use it in order to delete elements
 	const databaseId = uuidv4();
-	
-	const siteData = await scrapper.getData(req.body.original);
 
-	const newUrl = new urlModel({
-		title: siteData.title,
-		desription: siteData.desription,
-		originalUrl: req.body.original,
-		shortUrl: `http://localhost:5000/url/${id}`,
-		identifyer: databaseId,
-	});
-	newUrl.save((err: String) => {
-		err
-			? res.sendStatus(500)
-			: res.json({
-					url: `http://localhost:5000/url/${id}`,
-					originalUrl: req.body.original,
-					id: databaseId,
-					siteData,
-			  });
-	});
+	if (req.body.original.substr(req.body.original.length - 1) === "4" || "3") {
+		res.sendStatus(501);
+	} else {
+		const siteData = await scrapper.getData(req.body.original);
+		const newUrl = new urlModel({
+			title: siteData.title,
+			desription: siteData.desription,
+			originalUrl: req.body.original,
+			shortUrl: `http://localhost:5000/url/${id}`,
+			identifyer: databaseId,
+		});
+		newUrl.save((err: String) => {
+			err
+				? res.sendStatus(500)
+				: res.json({
+						url: `http://localhost:5000/url/${id}`,
+						originalUrl: req.body.original,
+						id: databaseId,
+						siteData,
+				  });
+		});
+	}
 });
 
 export default shortUrlRouter;
