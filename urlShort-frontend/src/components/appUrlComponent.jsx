@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { localDeleteById } from "../utils/handleLocalStorage";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function AppUrlComponent(props) {
@@ -24,7 +24,9 @@ function AppUrlComponent(props) {
 			<div className="url-component-info">
 				<div className="url-component-favicon"></div>
 				<h1 className="url-component-title">{props.title}</h1>
-				<p className="url-component-url">{props.url}</p>
+				<a className="url-component-url" href={props.url}>
+					{props.url}
+				</a>
 				<p className="url-component-description">{props.description}</p>
 			</div>
 			<div className="url-component-buttons">

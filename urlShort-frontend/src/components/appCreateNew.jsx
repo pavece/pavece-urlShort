@@ -13,7 +13,6 @@ function AppCreateNew(props) {
 	const fetchData = async e => {
 		e.preventDefault();
 		try {
-			console.log(userData);
 			setLoading(true);
 			if (userData.startsWith("http")) {
 				const axiosData = await axios.post(
@@ -27,7 +26,6 @@ function AppCreateNew(props) {
 				setLoading(false);
 				props.onUrlAdd(axiosData.data);
 			} else {
-				console.log("err");
 				setLoading(false);
 				toast.warning("Error");
 			}
@@ -54,7 +52,7 @@ function AppCreateNew(props) {
 					className="url-input"
 				/>
 				{loading ? (
-					<button className="loading-btn">Create</button>
+					<button className="loading-btn">Creating</button>
 				) : (
 					<button type="submit">Create</button>
 				)}

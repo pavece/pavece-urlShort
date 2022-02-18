@@ -67,28 +67,6 @@ button:hover {
 	margin-bottom: 15vh;
 }
 
-.features-container {
-	margin: 0 10vw;
-	gap: 10vw;
-	display: grid;
-	grid-template-columns: repeat(3, minmax(300px, 1fr));
-	margin-bottom: 15vh;
-}
-
-.feature {
-	text-align: center;
-	background-color: $background-accent;
-	font-size: calc(1rem + 0.4vw);
-	padding: 2vh 2vw;
-	border-radius: 10px;
-	color: $gray-font-color;
-
-	.feature-icon {
-		color: black;
-		font-size: calc(2rem + 1vw);
-	}
-}
-
 .landing-footer {
 	background-color: $background-accent;
 	padding: 3vh 3vw 1vh 3vw;
@@ -121,6 +99,7 @@ button:hover {
 	button {
 		width: 50%;
 		padding: 5% 1vw;
+		margin-bottom: 5vh;
 	}
 }
 .url-component-container {
@@ -180,5 +159,156 @@ button:hover {
 
 .loading-btn {
 	background-color: #2e78e7;
-	
+	&:hover {
+		background-color: #2e78e7;
+	}
+}
+@media screen and (max-width: 1000px) {
+	body {
+		h1 {
+			font-size: calc(1rem + 0.5vw);
+		}
+	}
+	nav {
+		padding: 2vh 3vw;
+	}
+	button {
+		font-size: calc(0.5rem + 0.5vw);
+		margin-bottom: 10vh;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		h1 {
+			font-size: calc(1rem + 2vw);
+		}
+	}
+	nav {
+		padding: 2vh 3vw;
+	}
+	.nav-logo {
+		width: 30vw;
+	}
+	button {
+		font-size: calc(0.8rem + 1vw);
+	}
+
+	//landing
+
+	.hero-section {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 10vw;
+		margin-top: 10vh;
+
+		.hero-text {
+			text-align: center;
+
+			h1 {
+				font-family: "Archivo Black", sans-serif;
+				font-size: calc(1.5rem + 2vw);
+			}
+			p {
+				color: $gray-font-color;
+				font-size: calc(0.8rem + 0.4vw);
+			}
+		}
+		.hero-info {
+			text-align: center;
+		}
+		.hero-ilu-container {
+			text-align: center;
+			img {
+				width: 85vw;
+			}
+		}
+		margin-bottom: 15vh;
+	}
+
+	.landing-footer {
+		background-color: $background-accent;
+		padding: 3vh 3vw 3vh 3vw;
+		img {
+			width: 30vw;
+		}
+		p {
+			font-size: calc(0.8rem + 1vw);
+		}
+		.footer-initial-container {
+			display: flex;
+			align-items: center;
+			margin-bottom: 5vh;
+		}
+	}
+
+	//app
+	.app-page-container {
+		padding: 1vh 3vw;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 3vw;
+	}
+
+	.create-new-conteiner {
+		background-color: $background-accent;
+		padding: 2vh 3vw;
+		height: auto;
+		text-align: center;
+		border-radius: 10px;
+		button {
+			width: 90%;
+			padding: 3% 3vw;
+		}
+		.url-input {
+			padding: 5% 5%;
+			border: none;
+			border-radius: 5px;
+			width: 80%;
+			margin-top: 10%;
+		}
+
+		.url-input:focus {
+			border: none;
+		}
+	}
+	.url-component-container {
+		background-color: $background-accent;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 3fr 2fr;
+		border-radius: 10px;
+		padding: 1vh 3vw;
+		margin-bottom: 5vh;
+		width: 95%;
+		h1 {
+			width: 90%;
+			line-break: auto;
+		}
+		p {
+			width: 90%;
+			line-break: auto;
+		}
+		button {
+			width: 40%;
+			margin: 0 3%;
+			padding: 3% 1vw;
+			font-size: calc(0.8rem + 1vw);
+		}
+
+		a {
+			width: 10%;
+			word-break: break-all;
+		}
+	}
+	.app-url-display-container {
+		height: auto;
+		overflow-x: none;
+	}
+	.url-component-buttons {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
 }
