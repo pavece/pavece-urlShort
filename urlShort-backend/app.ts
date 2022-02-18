@@ -34,6 +34,6 @@ app.use("/url", redirectUrlRouter);
 
 scrapper.start();
 
-app.listen(process.env.PORT, () => {
-	console.log(`listening in ${process.env.PORT}`);
+app.listen(5000, () => {
+	console.log(`listening in ${5000}`);
 });
