@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<div align="center">
 
 ![logo](https://res.cloudinary.com/dnh0go0q2/image/upload/v1645224509/urlShortLogo_uj0ghg.svg)
 
@@ -24,7 +24,6 @@ It also has a frontend part mad with react which consists of a simple landing pa
 DATABASE_PASSWORD= MONGO DB PASSWORD
 DATABASE_USERNAME= MONGO DB USERNAME
 DATABASE_NAME= MONGO DB DABATABASE NAME
-
 ```
 
 **NOTE: The project is prepared for mongo db atlas. If you prefer to use other type of mongo db hosting you will need to change the URL into app.ts**
@@ -34,13 +33,11 @@ DATABASE_NAME= MONGO DB DABATABASE NAME
 ```
 cd urlShort-backend
 npm run dev
-
 ```
 
 ```
 cd urlShort-frontend
 npm run dev
-
 ```
 
 **NOTE: Both services need to be running at the same time, use two terminals**
