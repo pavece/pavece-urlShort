@@ -71,30 +71,6 @@ button:hover {
   width: 40vw;
 }
 
-.features-container {
-  margin: 0 10vw;
-  gap: 10vw;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[3];
-      grid-template-columns: repeat(3, minmax(300px, 1fr));
-  margin-bottom: 15vh;
-}
-
-.feature {
-  text-align: center;
-  background-color: #f7f7f8;
-  font-size: calc(1rem + 0.4vw);
-  padding: 2vh 2vw;
-  border-radius: 10px;
-  color: #878c91;
-}
-
-.feature .feature-icon {
-  color: black;
-  font-size: calc(2rem + 1vw);
-}
-
 .landing-footer {
   background-color: #f7f7f8;
   padding: 3vh 3vw 1vh 3vw;
@@ -138,6 +114,7 @@ button:hover {
 .create-new-conteiner button {
   width: 50%;
   padding: 5% 1vw;
+  margin-bottom: 5vh;
 }
 
 .url-component-container {
@@ -206,5 +183,161 @@ button:hover {
 
 .loading-btn {
   background-color: #2e78e7;
+}
+
+.loading-btn:hover {
+  background-color: #2e78e7;
+}
+
+@media screen and (max-width: 1000px) {
+  body h1 {
+    font-size: calc(1rem + 0.5vw);
+  }
+  nav {
+    padding: 2vh 3vw;
+  }
+  button {
+    font-size: calc(0.5rem + 0.5vw);
+    margin-bottom: 10vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body h1 {
+    font-size: calc(1rem + 2vw);
+  }
+  nav {
+    padding: 2vh 3vw;
+  }
+  .nav-logo {
+    width: 30vw;
+  }
+  button {
+    font-size: calc(0.8rem + 1vw);
+  }
+  .hero-section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 10vw;
+    margin-top: 10vh;
+    margin-bottom: 15vh;
+  }
+  .hero-section .hero-text {
+    text-align: center;
+  }
+  .hero-section .hero-text h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: calc(1.5rem + 2vw);
+  }
+  .hero-section .hero-text p {
+    color: #878c91;
+    font-size: calc(0.8rem + 0.4vw);
+  }
+  .hero-section .hero-info {
+    text-align: center;
+  }
+  .hero-section .hero-ilu-container {
+    text-align: center;
+  }
+  .hero-section .hero-ilu-container img {
+    width: 85vw;
+  }
+  .landing-footer {
+    background-color: #f7f7f8;
+    padding: 3vh 3vw 3vh 3vw;
+  }
+  .landing-footer img {
+    width: 30vw;
+  }
+  .landing-footer p {
+    font-size: calc(0.8rem + 1vw);
+  }
+  .landing-footer .footer-initial-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 5vh;
+  }
+  .app-page-container {
+    padding: 1vh 3vw;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 3vw;
+  }
+  .create-new-conteiner {
+    background-color: #f7f7f8;
+    padding: 2vh 3vw;
+    height: auto;
+    text-align: center;
+    border-radius: 10px;
+  }
+  .create-new-conteiner button {
+    width: 90%;
+    padding: 3% 3vw;
+  }
+  .create-new-conteiner .url-input {
+    padding: 5% 5%;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+    margin-top: 10%;
+  }
+  .create-new-conteiner .url-input:focus {
+    border: none;
+  }
+  .url-component-container {
+    background-color: #f7f7f8;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 3fr 2fr;
+        grid-template-rows: 3fr 2fr;
+    border-radius: 10px;
+    padding: 1vh 3vw;
+    margin-bottom: 5vh;
+    width: 95%;
+  }
+  .url-component-container h1 {
+    width: 90%;
+    line-break: auto;
+  }
+  .url-component-container p {
+    width: 90%;
+    line-break: auto;
+  }
+  .url-component-container button {
+    width: 40%;
+    margin: 0 3%;
+    padding: 3% 1vw;
+    font-size: calc(0.8rem + 1vw);
+  }
+  .url-component-container a {
+    width: 10%;
+    word-break: break-all;
+  }
+  .app-url-display-container {
+    height: auto;
+    overflow-x: none;
+  }
+  .url-component-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=app.css.map */
