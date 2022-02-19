@@ -6,7 +6,7 @@ const LandingHeroSection = () => {
 		<div className="hero-section">
 			<div className="hero-info">
 				<div className="hero-text">
-					<h1>The no account url shortner</h1>
+					<h1>The no account url shortener</h1>
 					<p>Shorten your links fast without any account neded</p>
 				</div>
 				<div className="hero-btn">

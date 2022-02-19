@@ -46,7 +46,7 @@ npm run dev
 
 ## Some images of the page
 
-![landing page](https://res.cloudinary.com/dnh0go0q2/image/upload/v1645225723/landing-page-preview_wwxxas.png)
+![landing page](https://res.cloudinary.com/dnh0go0q2/image/upload/v1645308140/landing-preview_affptj.png)
 
 </br>
 
