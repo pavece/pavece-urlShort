@@ -32,11 +32,13 @@ DATABASE_NAME= MONGO DB DABATABASE NAME
 
 ```
 cd urlShort-backend
+npm install
 npm run dev
 ```
 
 ```
 cd urlShort-frontend
+npm install
 npm run dev
 ```
 
